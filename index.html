@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Захар Литвиненко</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="resume-card">
+        <header>
+            <img src="avatar.jpg" alt="Аватарка Захара Литвиненка" id="profile-photo">
+            
+            <div class="header-text">
+                <h1 id="header-name"></h1>
+                <p>Інженер-розробник / Електроніка / Програмування / Автоматизація</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="about-me-section hidden">
+                <h2>Про мене</h2>
+                <p>
+                    Я займаюся розробкою та створенням електронних пристроїв, автоматизованих систем і програмних рішень. Поєдную інженерний підхід із практичним досвідом у 3D-друці, моделюванні та прототипуванні. Моя мета — розробляти надійні та ефективні технічні рішення, які приносять користь у побуті, виробництві й енергетиці.
+                </p>
+            </section>
+
+            <section class="contact-section hidden">
+                <h2>Контактна інформація</h2>
+                <ul>
+                    <li>Email: airsunboost@gmail.com</li>
+                </ul>
+            </section>
+
+            <section class="hidden">
+                <h2>Освіта</h2>
+                <p>
+                    **Запорізький електротехнічний коледж**<br>
+                    Навчаюся за спеціальністю, пов’язаною з електронікою та автоматизацією. Поглиблено вивчаю інформатику, фізику, електротехніку й системи керування. Самостійно розвиваю знання з програмування мікроконтролерів і побудови енергосистем.
+                </p>
+            </section>
+
+            <section class="hidden">
+                <h2>Навички</h2>
+                <ul class="skills-list">
+                    <li>Розробка схем і прошивок для Arduino, ESP, Raspberry Pi</li>
+                    <li>Програмування на C/C++, Python</li>
+                    <li>Проєктування корпусів і деталей у 3D (Fusion 360, Tinkercad)</li>
+                    <li>3D-друк (Creality Ender, матеріали PLA, PETG)</li>
+                    <li>Створення систем моніторингу та керування (датчики, реле, енергоконтроль)</li>
+                    <li>Робота з живленням, сонячними станціями, акумуляторами AGM/GEL</li>
+                    <li>Базові навички веб-інтерфейсів і локальних серверів</li>
+                </ul>
+            </section>
+
+            <section class="hidden">
+                <h2>Досвід і проєкти</h2>
+                
+                <div class="project-item">
+                    <h3 class="project-trigger" data-modal="modal-airsunboost">AirSunBoost</h3> 
+                    <img src="AirSunBoost_без_фону.png" alt="Логотип AirSunBoost" class="project-logo"> 
+                    <p>
+                        Система оптимізації використання сонячної енергії для живлення побутових пристроїв... (натисніть для деталей)
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <h3 class="project-trigger" data-modal="modal-prototypes">Прототипи корпусів і механічних вузлів</h3>
+                    <p>
+                        3D-моделі та надруковані деталі для електронних проєктів. (натисніть для деталей)
+                    </p>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div id="button-wrapper">
+                <canvas id="rainbow-canvas"></canvas>
+                <button id="theme-toggle">Змінити на темну тему</button>
+            </div>
+            <p>&copy; <span id="footer-year"></span> Захар Литвиненко</p>
+        </footer>
+    </div>
+
+    <div id="modal-airsunboost" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Проєкт: AirSunBoost</h2>
+            <img src="AirSunBoost_без_фону.png" alt="Логотип AirSunBoost" class="project-logo-modal">
+            <p>Система оптимізації використання сонячної енергії для живлення побутових пристроїв. Розробка включає апаратну частину з моніторингом напруги та струму АКБ та динамічним керуванням навантаженням.</p>
+        </div>
+    </div>
+
+    <div id="modal-prototypes" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Проєкт: Прототипи корпусів</h2>
+            <p>3D-моделі та надруковані деталі для електронних проєктів.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
