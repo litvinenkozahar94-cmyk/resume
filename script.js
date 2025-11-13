@@ -105,27 +105,35 @@ window.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', setupCanvas);
 
     const card = document.querySelector('.resume-card');
+    const profilePhoto = document.getElementById('profile-photo');
+    const headerText = document.querySelector('.header-text');
             
     if (card) {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const deltaX = (x - centerX) / centerX;
-            const deltaY = (y - centerY) / centerY;
-            const rotateY = deltaX * -5;
-            const rotateX = deltaY * 5;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             
             card.style.setProperty('--mouse-x', `${x}px`);
             card.style.setProperty('--mouse-y', `${y}px`);
         });
 
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-        });
+        // Parallax Scroll Effect
+        let lastScrollY = window.scrollY;
+        function handleParallaxScroll() {
+            const scrollY = window.scrollY;
+            const deltaScroll = scrollY - lastScrollY;
+            
+            // Рухаємо фотографію трохи вгору/вниз
+            profilePhoto.style.transform = `translateY(${scrollY * 0.15}px)`;
+            
+            // Рухаємо заголовок трохи вгору/вниз
+            headerText.style.transform = `translateY(${scrollY * 0.08}px)`;
+
+            lastScrollY = scrollY;
+            requestAnimationFrame(handleParallaxScroll);
+        }
+
+        requestAnimationFrame(handleParallaxScroll);
     }
 });
